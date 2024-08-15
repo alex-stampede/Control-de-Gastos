@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Control de gastos</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="app-container">
-        <div class="balance-container">
-            <label id="balance-label">Balance actual:</label>
-            <input type="text" id="balance" readonly>
+        <div class="header">
+            <div class="balance-info">
+                <h1 id="balance-label">Balance</h1>
+                <div id="balance">$00.00</div>
+                <div id="last-movement">Último movimiento: -$0.00</div>
+            </div>
         </div>
         <div class="transaction-container">
             <input type="text" id="concept" placeholder="Concepto">
             <input type="number" id="amount" placeholder="Monto">
             <button id="income-btn">Ingreso</button>
             <button id="expense-btn">Gasto</button>
+            
         </div>
+
         <div class="history-container">
-            <h2>Historial</h2>
-            <div class="history-header">
-                <span class="history-column">Concepto</span>
-                <span class="history-column">Monto</span>
-                <span class="history-column">Acciones</span>
-            </div>
-            <ul id="history-list"></ul>
+            <div id="history-list"></div>
         </div>
+        <button id="clear-history-btn">Borrar Historial</button>
+
     </div>
-    <script src="script.js"></script>
+
+    <script src="app.js"></script>
 </body>
 </html>
