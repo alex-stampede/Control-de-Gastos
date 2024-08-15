@@ -1,0 +1,177 @@
+body {
+    background: #1e1e1e;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.app-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 1.8em;
+}
+
+.balance-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#balance-label {
+    font-size: 1.2em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#balance {
+    font-size: 1.5em;
+    text-align: center;
+    border: none;
+    background: transparent;
+    color: #fff;
+}
+
+.transaction-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#concept, #amount {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    outline: none;
+    font-size: 1em;
+}
+
+button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1em;
+}
+
+/* Botón de ingreso */
+#income-btn {
+    background: #6ca56e;
+}
+
+#income-btn:hover {
+    background: #3e5f3f;
+}
+
+/* Botón de gasto */
+#expense-btn {
+    background: #d66159;
+}
+
+#expense-btn:hover {
+    background: #a04747;
+}
+
+.history-container {
+    margin-top: 20px;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.history-item button {
+    background: #797979;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.history-item button:hover {
+    background: #d32f2f;
+}
+
+.history-column {
+    width: 33%;
+    text-align: center;
+}
+
+/* Estilos para los montos */
+.history-column.income {
+    color: #4caf50; /* Verde para ingresos */
+}
+
+.history-column.expense {
+    color: #f44336; /* Rojo para gastos */
+}
+
+#history-list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    margin: 0;
+    border-top: 1px solid #fff;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .app-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    #balance {
+        font-size: 1.3em;
+    }
+
+    button {
+        font-size: 0.9em;
+    }
+
+    #concept, #amount {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}
