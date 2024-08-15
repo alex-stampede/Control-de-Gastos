@@ -169,7 +169,7 @@ button {
 @media screen and (max-width: 600px) {
     .header, .transaction-container {
         flex-direction: column;
-        align-items: flex-start;
+        flex-direction: initial;
     }
 
     .transaction-container {
