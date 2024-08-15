@@ -1,5 +1,5 @@
 body {
-    background: #1e1e1e;
+    background: #383470;
     color: #fff;
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -12,51 +12,52 @@ body {
 }
 
 .app-container {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
+    background: #46427D;
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
     padding: 20px;
     max-width: 400px;
     width: 100%;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
-    text-align: center;
-    color: #fff;
-    font-size: 1.8em;
-}
-
-.balance-container {
+.header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
 
+.balance-info {
+    text-align: left;
+}
+
 #balance-label {
     font-size: 1.2em;
-    color: #fff;
-    margin-bottom: 10px;
+    color: #f5f6fa;
 }
 
 #balance {
-    font-size: 1.5em;
-    text-align: center;
-    border: none;
-    background: transparent;
-    color: #fff;
+    font-size: 1.8em;
+    margin: 10px 0;
+    color: #ffeaa7;
+}
+
+#last-movement {
+    font-size: 0.9em;
+    color: #f87ca5;
 }
 
 .transaction-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 #concept, #amount {
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 15px;
     border: none;
     background: rgba(255, 255, 255, 0.2);
     color: #fff;
@@ -64,9 +65,14 @@ h1, h2 {
     font-size: 1em;
 }
 
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
 button {
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 15px;
     border: none;
     color: #fff;
     cursor: pointer;
@@ -74,104 +80,99 @@ button {
     font-size: 1em;
 }
 
-/* Botón de ingreso */
+#clear-history-btn{
+    margin-top: 10px;
+    background-color: #475086;
+
+}
+#clear-history-btn:hover{
+    background-color: #2c2c54;
+
+}
+
 #income-btn {
-    background: #6ca56e;
+    background: #8652ff;
 }
 
 #income-btn:hover {
-    background: #3e5f3f;
+    background: #52329c;
 }
 
-/* Botón de gasto */
 #expense-btn {
-    background: #d66159;
+    background: #f87ca5;
 }
 
 #expense-btn:hover {
-    background: #a04747;
+    background: #e84118;
 }
 
 .history-container {
     margin-top: 20px;
 }
 
-.history-header {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    padding-bottom: 10px;
+.history-card {
+    background: #2C2C60;
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.history-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 0;
+.history-card .concept {
+    font-size: 1.1em;
+    margin-bottom: 5px;
 }
 
-.history-item button {
-    background: #797979;
+.history-card .date,
+.history-card .previous-balance {
+    font-size: 0.8em;
+    color: #d1d1d1;
+}
+
+.history-card .amount {
+    font-size: 1.2em;
+    color: #f87ca5;
+}
+
+.history-card .amount.income {
+    color: #8652ff;
+}
+
+.history-card .delete-btn {
+    background: #f87ca5;
     border: none;
-    color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 5px 10px;
+    color: white;
     cursor: pointer;
     transition: background 0.3s ease;
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
 
-.history-item button:hover {
-    background: #d32f2f;
-}
-
-.history-column {
-    width: 33%;
-    text-align: center;
-}
-
-/* Estilos para los montos */
-.history-column.income {
-    color: #4caf50; /* Verde para ingresos */
-}
-
-.history-column.expense {
-    color: #f44336; /* Rojo para gastos */
+.history-card .delete-btn:hover {
+    background: #e84118;
 }
 
 #history-list {
     list-style-type: none;
     padding: 0;
-    max-height: 200px;
-    overflow-y: auto;
     margin: 0;
-    border-top: 1px solid #fff;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
-/* Estilos responsivos */
+/* Responsiveness */
 @media screen and (max-width: 600px) {
-    body {
-        padding: 10px;
+    .header, .transaction-container {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .app-container {
-        padding: 15px;
-        max-width: 100%;
-    }
-
-    h1, h2 {
-        font-size: 1.5em;
-    }
-
-    #balance {
-        font-size: 1.3em;
-    }
-
-    button {
-        font-size: 0.9em;
-    }
-
-    #concept, #amount {
-        font-size: 0.9em;
-        padding: 8px;
+    .transaction-container {
+        flex-direction: column;
     }
 }
